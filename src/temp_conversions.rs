@@ -38,7 +38,8 @@ fn main() {
 
             let fahrenheit = celsius_to_fahrenheit(celcius);
             println!("{} degrees celcius is equal to {} degrees fahrenheit.", celcius, fahrenheit);
-        } else if fucked_off_whitespace == "farenheit" {
+        } 
+        else if fucked_off_whitespace == "farenheit" {
             println!("Please enter a number to convert: ");
             let mut input_f = String::new();
 
