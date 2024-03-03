@@ -15,7 +15,7 @@ use std::io;
 fn main() {
 
     loop {
-        println!("Would you like to convert to celcius, or farenheit? Type QUIT to quit program.");
+        println!("Would you like to convert to celcius, or farenheit? \nType QUIT to quit program.");
         let mut celc_or_faren = String::new();
 
         io::stdin()
@@ -38,9 +38,7 @@ fn main() {
 
             let fahrenheit = celsius_to_fahrenheit(celcius);
             println!("{} degrees celcius is equal to {} degrees fahrenheit.", celcius, fahrenheit);
-        }
-
-        if fucked_off_whitespace == "farenheit" {
+        } else if fucked_off_whitespace == "farenheit" {
             println!("Please enter a number to convert: ");
             let mut input_f = String::new();
 
@@ -55,6 +53,9 @@ fn main() {
 
             let celcius = farenheit_to_celcius(farenheit);
             println!("{} degrees farenheit is equal to {} degrees celcius.", farenheit, celcius);
+        }
+        if fucked_off_whitespace == "QUIT" {
+            break();
         }
     }
 }
