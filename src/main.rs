@@ -14,7 +14,7 @@ use std::io;
 
 fn main() {
 
-    while true {
+    loop {
         println!("Would you like to convert to celcius, or farenheit? Type QUIT to quit program.");
         let mut celc_or_faren = String::new();
 
@@ -29,12 +29,12 @@ fn main() {
 
             io::stdin()
                 .read_line(&mut input_c)
-                .expect("failed to read line D:");
+                .expect("Failed to read line!");
 
             let celcius: f64 = input_c
                 .trim()
                 .parse()
-                .expect("Please enter a number :)");
+                .expect("Please enter a number: ");
 
             let fahrenheit = celsius_to_fahrenheit(celcius);
             println!("{} degrees celcius is equal to {} degrees fahrenheit.", celcius, fahrenheit);
@@ -46,12 +46,12 @@ fn main() {
 
             io::stdin()
                 .read_line(&mut input_f)
-                .expect("Failed to read line :(");
+                .expect("Failed to read line!");
 
             let farenheit: f64 = input_f
                 .trim()
                 .parse()
-                .expect("Please enter a number :D");
+                .expect("Failed to read line!");
 
             let celcius = farenheit_to_celcius(farenheit);
             println!("{} degrees farenheit is equal to {} degrees celcius.", farenheit, celcius);
