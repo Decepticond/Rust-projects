@@ -4,6 +4,9 @@ Lord forgive me I'm trying to learn rust
 Aleksandr S
 March 2, 2024
 
+
+Note: I'll probably in the future be adding "renewed" versions after getting more comfortable w the lang
+
 */
 
 
