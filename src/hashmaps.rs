@@ -4,6 +4,8 @@ Aleksandr S
 March madness
 Hash maps
 
+This code belongs to rustlings
+
 */
 
 use std::collections::HashMap;
@@ -23,7 +25,34 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
         let team_1_name = v[0].to_string();
         let team_1_score: u8 = v[2].parse().unwrap();
         let team_2_name = v[1].to_string();
-        let team_2_score: u8 = v[3].parse().unwrap(); // [ MY COMMENT] just initially trying to see wtf to do here because its a bit
+        let team_2_score: u8 = v[3].parse().unwrap(); 
+
+        scores
+            .entry(team_1_name)                         // honestly ended up needing help because I didn't understand what it meant by "add" considering we're
+                                                        // in a for loop
+            .and_modify(|t| {
+                t.goals_scored += team_1_score;
+                t.goals_conceded += team_2_score;
+            })
+            .or_insert_with_key(|team_name| Team {
+                name: team_name.to_string(),
+                goals_scored: team_1_score,
+                goals_conceded: team_2_score,
+
+            });
+        scores
+            .entry(team_2_name)
+            .and_modify(|t| {
+                t.goals_scored += team_2_score;
+                t.goals_conceded += team_1_score;
+            })
+            .or_insert_with_key(|team_name| Team {
+                name: team_name.to_string(),
+                goals_scored: team_2_score,
+                goals_conceded: team_1_score,
+            });
+
+            
 
         
         // TODO: Populate the scores table with details extracted from the
