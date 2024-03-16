@@ -10,14 +10,12 @@ This code belongs to rustlings
 
 use std::collections::HashMap;
 
-// A structure to store the goal details of a team.
 struct Team {
     goals_scored: u8,
     goals_conceded: u8,
 }
 
 fn build_scores_table(results: String) -> HashMap<String, Team> {
-    // The name of the team is the key and its associated struct is the value.
     let mut scores: HashMap<String, Team> = HashMap::new();
 
     for r in results.lines() {
@@ -28,8 +26,7 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
         let team_2_score: u8 = v[3].parse().unwrap(); 
 
         scores
-            .entry(team_1_name)                         // honestly ended up needing help because I didn't understand what it meant by "add" considering we're
-                                                        // in a for loop
+            .entry(team_1_name)                         // honestly ended up needing help because I didn't understand what it meant by "add" considering we're in a for loop
             .and_modify(|t| {
                 t.goals_scored += team_1_score;
                 t.goals_conceded += team_2_score;
@@ -40,6 +37,7 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
                 goals_conceded: team_2_score,
 
             });
+        
         scores
             .entry(team_2_name)
             .and_modify(|t| {
@@ -51,15 +49,6 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
                 goals_scored: team_2_score,
                 goals_conceded: team_1_score,
             });
-
-            
-
-        
-        // TODO: Populate the scores table with details extracted from the
-        // current line. Keep in mind that goals scored by team_1
-        // will be the number of goals conceded from team_2, and similarly
-        // goals scored by team_2 will be the number of goals conceded by
-        // team_1.
     }
     scores
 }
