@@ -1,11 +1,6 @@
 /*
 
-Lord forgive me I'm trying to learn rust
-Aleksandr S
-March 2, 2024
-
-
-Note: I'll probably in the future be adding "renewed" versions after getting more comfortable w the lang
+no
 
 */
 
@@ -21,9 +16,9 @@ fn main() {
         io::stdin()
             .read_line(&mut celc_or_faren)
             .expect("Failed to read line");
-        let fucked_off_whitespace = celc_or_faren.trim();
+        let what_are_these_var_names_please_dont_do_this_lol = celc_or_faren.trim();
 
-        if fucked_off_whitespace == "celcius" {
+        if what_are_these_var_names_please_dont_do_this_lol == "celcius" {
             println!("Please enter a number to convert: ");
             let mut input_c = String::new();
 
@@ -39,7 +34,7 @@ fn main() {
             let fahrenheit = celsius_to_fahrenheit(celcius);
             println!("{} degrees celcius is equal to {} degrees fahrenheit.", celcius, fahrenheit);
         } 
-        else if fucked_off_whitespace == "farenheit" {
+        else if what_are_these_var_names_please_dont_do_this_lol == "farenheit" {
             println!("Please enter a number to convert: ");
             let mut input_f = String::new();
 
@@ -55,7 +50,7 @@ fn main() {
             let celcius = farenheit_to_celcius(farenheit);
             println!("{} degrees farenheit is equal to {} degrees celcius.", farenheit, celcius);
         }
-        if fucked_off_whitespace == "QUIT" {
+        if what_are_these_var_names_please_dont_do_this_lol == "QUIT" {
             break();
         }
     }
