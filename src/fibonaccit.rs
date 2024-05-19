@@ -1,6 +1,5 @@
 /*
 
-Part 2 of the unfortunate rust """development"""
 Aleksandr S
 March 2, 2024
 
