@@ -1,6 +1,6 @@
 /*
 
-Aleksandr S
+Lazaurus S
 March madness
 Hash maps
 
