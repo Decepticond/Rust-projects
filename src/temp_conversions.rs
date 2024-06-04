@@ -12,11 +12,11 @@ fn main() {
     loop {
         println!("Would you like to convert to celcius, or farenheit? \nType QUIT to quit program.");
         let mut celc_or_faren = String::new();
+        let what_are_these_var_names_please_dont_do_this_lol = celc_or_faren.trim();
 
         io::stdin()
             .read_line(&mut celc_or_faren)
             .expect("Failed to read line");
-        let what_are_these_var_names_please_dont_do_this_lol = celc_or_faren.trim();
 
         if what_are_these_var_names_please_dont_do_this_lol == "celcius" {
             println!("Please enter a number to convert: ");
@@ -34,6 +34,7 @@ fn main() {
             let fahrenheit = celsius_to_fahrenheit(celcius);
             println!("{} degrees celcius is equal to {} degrees fahrenheit.", celcius, fahrenheit);
         } 
+            
         else if what_are_these_var_names_please_dont_do_this_lol == "farenheit" {
             println!("Please enter a number to convert: ");
             let mut input_f = String::new();
@@ -50,10 +51,13 @@ fn main() {
             let celcius = farenheit_to_celcius(farenheit);
             println!("{} degrees farenheit is equal to {} degrees celcius.", farenheit, celcius);
         }
+        
         if what_are_these_var_names_please_dont_do_this_lol == "QUIT" {
             break();
         }
+        
     }
+    
 }
 
 fn celsius_to_fahrenheit(celcius: f64) -> f64 {
